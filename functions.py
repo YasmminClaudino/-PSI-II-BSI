@@ -26,19 +26,19 @@ def insereMatriz(entrada, matriz, dirPosicoes, qtdColuna,listaPosicoes):
             if len(valor) > 0:
                 elemento = valor[0]
                 matriz[linha][coluna] = elemento
-                setPosition(linha, coluna, elemento, dirPosicoes, listaPosicoes)
+                setCasas(linha, coluna, elemento, dirPosicoes, listaPosicoes)
                 coluna+=1
                 if coluna == qtdColuna:
                     linha += 1
                     coluna = 0
 
-def setPosition(linha, coluna, elemento, dirPosicoes, listaPosicoes):
+def setCasas(linha, coluna, elemento, dirPosicoes, listaPosicoes):
     if elemento != "0":
         dirPosicoes[elemento] = (linha, coluna)
         if elemento != "R":
             listaPosicoes.append(elemento)
             
-def getDanometro(dirPosicoes, listaPosicoes):
+def menorCaminho(dirPosicoes, listaPosicoes):
     listPermutation = permutation.permutacoes(listaPosicoes)
     origemRetorno= dirPosicoes["R"]
     somaAtual = 100000000000000000
@@ -66,7 +66,7 @@ def calculoDanometro(posicaoA, posicaoB):
     return calc
 
 def getResults(dirPosicoes, listaPosicoes):
-    results = getDanometro(dirPosicoes, listaPosicoes)
+    results = menorCaminho(dirPosicoes, listaPosicoes)
     sequencia = ""
     for strings in results[1]:
         sequencia+= strings + " "

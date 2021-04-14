@@ -13,7 +13,7 @@ dirPosicoes = {}
 
 entrada = functions.lerEntrada()
 qtdLinha = int(entrada[0].split()[0])
-qtdColuna =  int(entrada[0].split()[1])
+qtdColuna = int(entrada[0].split()[1])
 matriz = functions.criarMatriz(qtdLinha,qtdColuna)
 functions.insereMatriz(entrada, matriz, dirPosicoes, qtdColuna, listaPosicoes)
 results = functions.getResults(dirPosicoes, listaPosicoes)
