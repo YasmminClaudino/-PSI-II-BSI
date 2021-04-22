@@ -15,6 +15,17 @@ no aquivo *entrada.txt* nele também diz quando o código não funciona mais com
 
 PS: Caso tenha a lib matplotlib instalada, descomentar a linha 9 em main para visualização do gráfico.
 
+    PS2: O projeto tem 3 branches para diferenciar as VA's. 
+
+    1. main
+    2. 1VA
+    3. 2VA
+
+para acessar cada código redirecione para a branch específica
+
+    1. git checkout nome_branch
+
+
 #Exemplo em gráficos
 
 Demonstraçã da menor rota e melhor para a seguinte entrada:
