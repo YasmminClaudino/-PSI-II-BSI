@@ -5,7 +5,7 @@
 #Após criação da matriz, chega a hora de inserir os valores e salvar
 #as posições de cada ponto para facilitar o calculo do danometro
 #Funçao de calc do danometro que recebe os dois pontos a serem calculados
-#a distancia entre eles |x1 - x2| + |y1 - y2| para que possa ser somado
+#a distancia entre eles |x2 - x1| + |y2 - y1| para que possa ser somado
 #
 
 import sys
@@ -49,8 +49,10 @@ def menorCaminho(dirPosicoes, listaPosicoes):
         posicaoAtual = origemRetorno
         for x in range(len(casa)):
             proximaPosicao = dirPosicoes[casa[x]]
+
             soma+=calculoDanometro(posicaoAtual, proximaPosicao)
             posicaoAtual = proximaPosicao
+
         soma+=calculoDanometro(posicaoAtual, origemRetorno) #soma o retorno
 
         #pode ser maior ou igual, mas optei por pegar o maior para nao trocar novamente o valor 
@@ -62,7 +64,7 @@ def menorCaminho(dirPosicoes, listaPosicoes):
 def calculoDanometro(posicaoA, posicaoB):
     x1, x2 = posicaoA[0], posicaoB[0]
     y1, y2 = posicaoA[1], posicaoB[1]
-    calc = abs(x1-x2) + abs(y1-y2)
+    calc = abs(x2-x1) + abs(y2-y1)
     return calc
 
 def getResults(dirPosicoes, listaPosicoes):

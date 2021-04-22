@@ -10,5 +10,5 @@ def permutacoes(lista):
         yield lista
     else:
         for permutacao in permutacoes(lista[1:]):
-            for x in range(len(lista)):
-                yield permutacao[:x] + lista[0:1] + permutacao[x:]
+            for indice in range(len(lista)):
+                yield permutacao[:indice] + lista[0:1] + permutacao[indice:]
