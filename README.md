@@ -13,6 +13,7 @@ Como compilar o código:
 No arquivo *todasEntradas.txt* pode ser encontrado várias opções que servem como entrada
 no aquivo *entrada.txt* nele também diz quando o código não funciona mais com determinada entrada.
 
+PS: Caso tenha a lib matplotlib instalada, descomentar a linha 9 em main para visualização do gráfico.
 
 #Exemplo em gráficos
 
