@@ -4,6 +4,10 @@
 
 #Criação do metodo para fazer a permutação da lista de forma recursiva utilizando
 # a palavra reservada do python yield para diminuir o gasto de memória.
+#ele guarda primeira posição da lista e vai concatenando com os valores permutados
+#através da recursão.
+#[:indice] - primeiro elemento da permutaçao até o indice
+#[indice:] - valor do indice até o ultimo elemento da permutação
 
 def permutacoes(lista):
     if len(lista) <=1:
@@ -11,4 +15,10 @@ def permutacoes(lista):
     else:
         for permutacao in permutacoes(lista[1:]):
             for indice in range(len(lista)):
-                yield permutacao[:indice] + lista[0:1] + permutacao[indice:]
+                primeiroElementoLista = lista[0:1]
+                yield permutacao[:indice] + primeiroElementoLista + permutacao[indice:]
+
+#permutacoes(["A", "B", 'C', 'D'])
+
+
+#
