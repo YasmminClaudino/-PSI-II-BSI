@@ -6,7 +6,7 @@
 
 def permutacoes(entrada):
     permutacaoAtual = []
-    if len(entrada) <= 1:
+    if len(entrada) <= 0:
         return [entrada]
     for i in range(len(entrada)):
         corteLista = entrada[:i] + entrada[i + 1:]
