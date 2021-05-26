@@ -6,7 +6,7 @@
 #Arquivo de entrada é dado através de um arquivo que pode ser colocado os valores
 
 import functions
-#import plotarGrafico
+import plotarGrafico
 
 matriz, listaPosicoes = [], []
 dirPosicoes = {}
