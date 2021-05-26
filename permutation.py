@@ -5,9 +5,9 @@
 #Criação do metodo para fazer a permutação da lista de forma recursiva
 
 def permutacoes(entrada):
+    permutacaoAtual = []
     if len(entrada) <= 1:
         return [entrada]
-    permutacaoAtual = []
     for i in range(len(entrada)):
         corteLista = entrada[:i] + entrada[i + 1:]
         for p in permutacoes(corteLista):

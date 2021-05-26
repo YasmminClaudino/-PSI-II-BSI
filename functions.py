@@ -5,12 +5,13 @@
 #Após criação da matriz, chega a hora de inserir os valores e salvar
 #as posições de cada ponto para facilitar o calculo do danometro
 #Funçao de calc do danometro que recebe os dois pontos a serem calculados
-#a distancia entre eles |x2 - x1| + |y2 - y1| para que possa ser somado
+#a distancia entre eles |x1 - x2| + |y1 - y2| para que possa ser somado
 #
 
 import sys
 import permutation
 import time
+import math
 
 def lerEntrada():
     arq = open(sys.argv[1], 'r')
@@ -43,8 +44,8 @@ def setCasas(linha, coluna, elemento, dirPosicoes, listaPosicoes):
 inicio = time.time()
 def menorCaminho(dirPosicoes, listaPosicoes):
     listPermutation = permutation.permutacoes(listaPosicoes)
-    origemRetorno= dirPosicoes["R"]
-    somaAtual = 100000000000000000
+    origemRetorno = dirPosicoes["R"]
+    somaAtual = math.inf
     sequencia = []
     
     for casa in listPermutation:
@@ -63,11 +64,11 @@ def menorCaminho(dirPosicoes, listaPosicoes):
             somaAtual = soma
             sequencia = casa
     return(somaAtual, sequencia)
-fim = time.time()
+
 def calculoDanometro(posicaoA, posicaoB):
     x1, x2 = posicaoA[0], posicaoB[0]
     y1, y2 = posicaoA[1], posicaoB[1]
-    calc = abs(x2-x1) + abs(y2-y1)
+    calc = abs(x1-x2) + abs(y1-y2)
     return calc
 
 def getResults(dirPosicoes, listaPosicoes):
