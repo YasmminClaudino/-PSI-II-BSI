@@ -10,6 +10,8 @@
 
 import sys
 import permutation
+import time
+
 def lerEntrada():
     arq = open(sys.argv[1], 'r')
     linhas = arq.readlines()
@@ -37,7 +39,8 @@ def setCasas(linha, coluna, elemento, dirPosicoes, listaPosicoes):
         dirPosicoes[elemento] = (linha, coluna)
         if elemento != "R":
             listaPosicoes.append(elemento)
-            
+
+inicio = time.time()
 def menorCaminho(dirPosicoes, listaPosicoes):
     listPermutation = permutation.permutacoes(listaPosicoes)
     origemRetorno= dirPosicoes["R"]
@@ -60,7 +63,7 @@ def menorCaminho(dirPosicoes, listaPosicoes):
             somaAtual = soma
             sequencia = casa
     return(somaAtual, sequencia)
-
+fim = time.time()
 def calculoDanometro(posicaoA, posicaoB):
     x1, x2 = posicaoA[0], posicaoB[0]
     y1, y2 = posicaoA[1], posicaoB[1]
@@ -73,6 +76,3 @@ def getResults(dirPosicoes, listaPosicoes):
     for strings in results[1]:
         sequencia+= strings + " "
     return sequencia
-
-    
-    
