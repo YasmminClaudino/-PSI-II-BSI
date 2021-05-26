@@ -70,7 +70,6 @@ Pior rota:
 ![Project Flow](graficos/exemplo2PiorRota.png)
 
 
-
 #Resultados
 
 Como pode ter sido observado, as piores rotas são quando os pontos tendem a cruzar mais os caminhos
