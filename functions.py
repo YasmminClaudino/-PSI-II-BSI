@@ -10,6 +10,9 @@
 
 import sys
 import permutation
+import time
+import math
+
 def lerEntrada():
     arq = open(sys.argv[1], 'r')
     linhas = arq.readlines()
@@ -37,11 +40,12 @@ def setCasas(linha, coluna, elemento, dirPosicoes, listaPosicoes):
         dirPosicoes[elemento] = (linha, coluna)
         if elemento != "R":
             listaPosicoes.append(elemento)
-            
+
+inicio = time.time()
 def menorCaminho(dirPosicoes, listaPosicoes):
     listPermutation = permutation.permutacoes(listaPosicoes)
-    origemRetorno= dirPosicoes["R"]
-    somaAtual = 100000000000000000
+    origemRetorno = dirPosicoes["R"]
+    somaAtual = math.inf
     sequencia = []
     
     for casa in listPermutation:
@@ -49,8 +53,10 @@ def menorCaminho(dirPosicoes, listaPosicoes):
         posicaoAtual = origemRetorno
         for x in range(len(casa)):
             proximaPosicao = dirPosicoes[casa[x]]
+
             soma+=calculoDanometro(posicaoAtual, proximaPosicao)
             posicaoAtual = proximaPosicao
+
         soma+=calculoDanometro(posicaoAtual, origemRetorno) #soma o retorno
 
         #pode ser maior ou igual, mas optei por pegar o maior para nao trocar novamente o valor 
@@ -71,6 +77,3 @@ def getResults(dirPosicoes, listaPosicoes):
     for strings in results[1]:
         sequencia+= strings + " "
     return sequencia
-
-    
-    

@@ -13,6 +13,18 @@ Como compilar o código:
 No arquivo *todasEntradas.txt* pode ser encontrado várias opções que servem como entrada
 no aquivo *entrada.txt* nele também diz quando o código não funciona mais com determinada entrada.
 
+PS: Caso tenha a lib matplotlib instalada, descomentar a linha 9 em main para visualização do gráfico.
+
+    PS2: O projeto tem 3 branches para diferenciar as VA's. 
+
+    1. main
+    2. 1VA
+    3. 2VA
+
+para acessar cada código redirecione para a branch específica
+
+    1. git checkout nome_branch
+
 
 #Exemplo em gráficos
 
@@ -56,7 +68,6 @@ Pior rota:
 > F A J C I D N B K 
 
 ![Project Flow](graficos/exemplo2PiorRota.png)
-
 
 
 #Resultados

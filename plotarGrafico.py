@@ -6,9 +6,10 @@ dirPosicoes = main.dirPosicoes
 results = main.results
 
 def plotarGrafico():
+       setPosicaoGrafico("R", dirPosicoes)
        for i in results.split():
               setPosicaoGrafico(i, dirPosicoes)
-
+       setPosicaoGrafico("R", dirPosicoes)
 def setPosicaoGrafico(i, dirPosicoes):
        x.append(dirPosicoes[i][0])
        y.append(dirPosicoes[i][1])
