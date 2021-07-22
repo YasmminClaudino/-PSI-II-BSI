@@ -1,22 +1,22 @@
-# Projeto Interdisciplina SI II -  Aluna: Yasmmin Claudino
-#UFRPE - 2020.1
-#FlyFood
-#dic utilizado para guardar as posições de cada "casa".
-#Lista para guardar as posições que será feita as permutações
-#Arquivo de entrada é dado através de um arquivo que pode ser colocado os valores
+from classes import *
+from lerEntrada import *
 
-import functions
-import plotarGrafico
+tamnhoPopulacao = 60
+semente = 1541515614
+geracao = 1000
+elitismo = 3
+mutacao = 0.02
+crossover = 0.6
+l = []
+locais = getLocais(l)
+primeiroElemento = getPrimeiroElemento()
+menorDistancia = 0
 
-matriz, listaPosicoes = [], []
-dirPosicoes = {}
 
-entrada = functions.lerEntrada()
-qtdLinha = int(entrada[0].split()[0])
-qtdColuna = int(entrada[0].split()[1])
+ca = AlgoritmoGenetico(tamnhoPopulacao, semente, geracao, primeiroElemento)
+ca.populacaoInicial(l, primeiroElemento)
 
-matriz = functions.criarMatriz(qtdLinha,qtdColuna)
-functions.insereMatriz(entrada, matriz, dirPosicoes, qtdColuna, listaPosicoes)
-results = functions.getResults(dirPosicoes, listaPosicoes)
+for i in range(1, geracao + 1):
+    menorDistancia = ca.melhorDistancia()
 
-print(results)
+print(menorDistancia)

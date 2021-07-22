@@ -41,7 +41,6 @@ def setCasas(linha, coluna, elemento, dirPosicoes, listaPosicoes):
         if elemento != "R":
             listaPosicoes.append(elemento)
 
-inicio = time.time()
 def menorCaminho(dirPosicoes, listaPosicoes):
     listPermutation = permutation.permutacoes(listaPosicoes)
     origemRetorno = dirPosicoes["R"]
@@ -64,6 +63,7 @@ def menorCaminho(dirPosicoes, listaPosicoes):
             somaAtual = soma
             sequencia = casa
     return(somaAtual, sequencia)
+
 
 def calculoDanometro(posicaoA, posicaoB):
     x1, x2 = posicaoA[0], posicaoB[0]
